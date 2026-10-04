@@ -2,13 +2,13 @@
 
 Does shooting more three-pointers win NBA games, and has that return changed as the whole league embraced the three? This repository contains the [paper](haotian_nba-three-point-returns-project.pdf), data, and Stata code for a panel study of 600 team-seasons from 2005 to 2024.
 
-The project began as a group project for AU25 ECON 4831: Sposts & Econ Data Analytics at The Ohio State University. This version rebuilds the analysis and reaches a different conclusion. The original version of the project is in [`history/`](history/).
+The project began as a group project for Autumn 2025 ECON 4831: Sports Data Analytics and Economic Analysis at The Ohio State University. This version rebuilds the analysis and reaches a different conclusion. The original version of the project is in [`history/`](history/).
 
 ---
 
 ## Changes from the original version
 
-**Dropped two bad controls.** The original model controlled for offensive and defensive ratings. Yet both turned out to be bad controls: they are outcomes of the same season's play and sit between shot selection and winning, so holding them fixed blocks the very path the paper is trying to measure. Once I removed the controlls, the return to three-point volume went from roughly zero to large and highly significant.
+**Dropped two bad controls.** The original model controlled for offensive and defensive ratings. Yet both turned out to be bad controls: they are outcomes of the same season's play and sit between shot selection and winning, so holding them fixed blocks the very pathway through which three-point shooting wins games. Once I removed the controls, the return to three-point volume went from roughly zero to large and highly significant.
 
 **Fixed the team identifiers.** Teams that were renamed or relocated (SuperSonics/Thunder, Nets, Bobcats/Hornets, Hornets/Pelicans) are merged, resulting in 30 franchises observed in all 20 seasons.
 
@@ -18,11 +18,11 @@ The project began as a group project for AU25 ECON 4831: Sposts & Econ Data Anal
 
 ## Findings
 
-![Marginal effect of three-point attempt rate on win rate](figure1_marginal_effect.png)
+![Marginal effect of three-point attempt rate on win rate](figure1_marginal_effect_stata.png)
 
-- Each percent increase in a team's three-point attempt rate is associated with a **0.97 percent increase in win rate**, or about 0.8 more wins per season (p < 0.001).
+- Each percentage point increase in a team's three-point attempt rate is associated with a **0.97 percentage point increase in win rate**, or about 0.8 more wins per season (p < 0.001).
 - The return was largest in the mid-2000s and appears to erode as the rest of the league shoots more threes. The decline is not statistically significant (F = 1.62, p = 0.215), so this is suggestive rather than established.
-- There is no period of rising returns. The advantage to increasing three-point shooting was already there in 2005, long before most teams acted on it.
+- There is no period of rising returns. The advantage of increasing three-point shooting was already there in 2005, long before most teams acted on it.
 
 | Specification | Coefficient on 3PA% | Std. error |
 |---|---|---|
@@ -30,7 +30,7 @@ The project began as a group project for AU25 ECON 4831: Sposts & Econ Data Anal
 | **Team and season fixed effects** | **0.968** | **(0.237)** |
 | + the original model's controls (ORtg, DRtg, Pace) | −0.061 | (0.060) |
 
-Standard errors clustered by franchise. Net rating alone explains 93.5% of the variance in win rate, which is why adding offensive and defensive rating leaves almost nothing for shot selection to explain.
+Standard errors clustered by franchise. Net rating alone explains 93.5% of the variance in win rate, which is why adding offensive and defensive ratings leaves almost nothing for shot selection to explain.
 
 ---
 
@@ -41,8 +41,8 @@ Standard errors clustered by franchise. Net rating alone explains 93.5% of the v
 | `haotian_nba-three-point-returns-project.pdf` | Paper |
 | `nba_advanced_stats.csv` | Panel data, 600 team-seasons |
 | `nba_3pa_analysis_regression.do` | Replication code for Tables 2–4, the hypothesis tests, the robustness checks, and a Stata version of Figure 1 |
-| `figure1_marginal_effect.png` | Figure 1 |
-| `history/` | The original group draft and earlier versions |
+| `figure1_marginal_effect_stata.png` | Figure 1 |
+| `history/` | The original group project |
 
 ## Reproducing the results
 
@@ -78,7 +78,7 @@ Team-level regular-season statistics from [Basketball-Reference](https://www.bas
 
 ## Use of AI tools
 
-I used Claude to 1) replicate the Stata code of the regression results using reg, lincom, eststo, esttab, and estpost commands, 2) generate the figure of marginal effect with confidence intervals and slopes embedded, and 3) build the structure of this README file.
+I used Claude to 1) identify the inconsistency between 30 franchises and 35 teams, 2) replicate the Stata code of the regression results using reg, lincom, eststo, esttab, and estpost commands, 3) generate the figure of marginal effect with confidence intervals and slopes embedded, and 4) draft the Results and Conclusion section of the paper and this README file.
 
 ## Author
 
