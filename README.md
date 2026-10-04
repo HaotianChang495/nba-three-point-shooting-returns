@@ -12,7 +12,7 @@ The project began as a group project for Autumn 2025 ECON 4831: Sports Data Anal
 
 **Fixed the team identifiers.** Teams that were renamed or relocated (SuperSonics/Thunder, Nets, Bobcats/Hornets, Hornets/Pelicans) are merged, resulting in 30 franchises observed in all 20 seasons.
 
-**Estimated the time-varying model.** The original paper stated a model in which the effect of three-point attempt rate changes over time, but never estimated it in a single regression. The new version computes the marginal effect for every season and clusters standard errors by franchise.
+**Estimated the time-varying model.** The original paper stated a model in which the effect of three-point attempt rate changes over time, but never estimated it in a single regression. The new version estimates it in full and computes the marginal effect for every season and clusters standard errors by franchise.
 
 ---
 
@@ -40,7 +40,7 @@ Standard errors clustered by franchise. Net rating alone explains 93.5% of the v
 |---|---|
 | `haotian_nba-three-point-returns-project.pdf` | Paper |
 | `nba_advanced_stats.csv` | Panel data, 600 team-seasons |
-| `nba_3pa_analysis_regression.do` | Replication code for Tables 2–4, the hypothesis tests, the robustness checks, and a Stata version of Figure 1 |
+| `nba_3pa_analysis_regression.do` | Replication code for Tables 2–4, the hypothesis tests, the robustness checks, and Figure 1 |
 | `figure1_marginal_effect_stata.png` | Figure 1 |
 | `history/` | The original group project |
 
@@ -78,7 +78,7 @@ Team-level regular-season statistics from [Basketball-Reference](https://www.bas
 
 ## Use of AI tools
 
-I used Claude to 1) identify the inconsistency between 30 franchises and 35 teams, 2) replicate the Stata code of the regression results using reg, lincom, eststo, esttab, and estpost commands, 3) generate the figure of marginal effect with confidence intervals and slopes embedded, and 4) draft the Results and Conclusion section of the paper and this README file.
+I used Claude to 1) identify the inconsistency between 30 franchises and 35 teams, 2) replicate the Stata code of the regression results using reg, lincom, eststo, esttab, and estpost commands, 3) generate the figure of marginal effect with confidence intervals and slopes embedded, and 4) draft the Results and Conclusion sections of the paper and this README file.
 
 ## Author
 
