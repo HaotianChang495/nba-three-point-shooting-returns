@@ -8,7 +8,7 @@ The project began as a group project for Autumn 2025 ECON 4831: Sports Data Anal
 
 ## Changes from the original version
 
-**Dropped two bad controls.** The original model controlled for offensive and defensive ratings. Yet both turned out to be bad controls: they are outcomes of the same season's play and sit between shot selection and winning, so holding them fixed blocks the very pathway through which three-point shooting wins games. Once I removed the controls, the return to three-point volume went from roughly zero to large and highly significant.
+**Dropped two bad controls.** The original model controlled for offensive and defensive ratings. Yet both turned out to be bad controls: they are outcomes of the same season's play and sit between shot selection and winning, so holding them fixed blocks the very pathway through which three-point shooting affects winning. Once I removed the controls, the return to three-point volume went from roughly zero to large and highly significant.
 
 **Fixed the team identifiers.** Teams that were renamed or relocated (SuperSonics/Thunder, Nets, Bobcats/Hornets, Hornets/Pelicans) are merged, resulting in 30 franchises observed in all 20 seasons.
 
