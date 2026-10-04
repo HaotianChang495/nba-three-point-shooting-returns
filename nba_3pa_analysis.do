@@ -3,7 +3,7 @@
 * Evidence from the NBA (2005-2024)
 * Haotian Chang
 *
-* Input : NBA_Advanced_Stats.csv   (600 franchise-season observations)
+* Input : nba_advanced_stats.csv   (600 franchise-season observations)
 *
 * Requires: ssc install ftools
 *           ssc install require      // reghdfe 6.x dependency
@@ -26,7 +26,7 @@ set more off
 * cd "/your/path/here"
 
 pwd                       // confirm you are in the right folder
-import delimited "NBA_Advanced_Stats.csv", clear varnames(1) case(preserve)
+import delimited "nba_advanced_stats.csv", clear varnames(1) case(preserve)
 
 * The 3PA% header is not a legal Stata name (it starts with a digit and
 * contains %).  Different Stata versions mangle it differently: some import
@@ -321,7 +321,7 @@ twoway (rarea lo hi season, color(navy%15) lwidth(none))          ///
        xtitle("Season") ytitle("{&Delta} win rate per +1 pp in 3PA%") ///
        title("Marginal effect of three-point attempt rate on win rate") ///
        legend(off) graphregion(color(white))
-graph export "Figure1_MarginalEffect.png", replace width(1800)
+graph export "figure1_marginal_effect.png", replace width(1800)
 restore
 
 *==============================================================================
