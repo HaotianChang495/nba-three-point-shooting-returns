@@ -7,6 +7,10 @@ Three-point shooting is a high-risk, high-reward strategy in the NBA: a three go
 
 This research finds that from 2005 to 2024, teams that shot more threes won more games. Taking one more of every 100 shots from three was associated with 0.8 more wins in an 82-game season. The return was largest in the mid-2000s and seems to have eroded as the rest of the league caught up, but that decline is not statistically significant.
 
+<p align="center">
+  <img src="intro_three_point_share.png" alt="Each team's three-point share of field-goal attempts in 2005 and 2024" width="750">
+</p>
+
 I use a balanced panel of all 30 NBA franchises over 20 regular seasons (2005–2024, 600 team-seasons) from Basketball-Reference, and regress win rate on three-point attempt rate (3PA/FGA) with team and season fixed effects and standard errors clustered by franchise. 
 
 Team fixed effects absorb time-invariant team characteristics, so the result does not pick up successful teams that happen to shoot more threes; season fixed effects absorb league-wide shocks, such as rule changes and the rise in three-point volume itself. The estimate therefore comes from a franchise’s deviation from both its own long-run three-point rate and its season’s average: it asks whether shooting more threes than other teams is rewarded, not whether the league as a whole has shot more of them. To let the return change over time, I add interactions of 3PA/FGA with linear and quadratic season trends and check the result against an unrestricted model with a separate slope for each season.
@@ -37,7 +41,9 @@ The first version of the code used `reghdfe`. I required a second version that u
 
 ## Findings
 
-![Marginal effect of three-point attempt rate on win rate](figure1_marginal_effect_stata.png)
+<p align="center">
+  <img src="figure1_marginal_effect_stata.png" alt="Marginal effect of three-point attempt rate on win rate" width="700">
+</p>
 
 - **Three-point shooting is associated with winning.** A one-percentage-point increase in three-point share (3PA/FGA) is associated with a 0.97 percentage point higher win rate, about 0.8 wins over an 82-game season (p < 0.001). The typical deviation the model uses, 3.8 percentage points from a team’s own norm and its season’s average, is worth about 3 wins. The estimate holds without the pandemic seasons (0.99), for 2005–2019 alone (1.02), and with unmerged team names (0.98); it weakens only for 2015–2024 (0.69, p = 0.10).
 - **The return was available long before most teams used it.** The edge was largest at the start of the sample, roughly one extra win per percentage point in 2005–2009, when the average team took one in five shots from three. The league did not reach two in five until the 2020s. I read this as slow diffusion rather than a late discovery: recognizing that threes pay is cheap, but rebuilding a roster to shoot them is not.
