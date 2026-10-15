@@ -8,7 +8,7 @@ Three-point shooting is a high-risk, high-reward strategy in the NBA: a three go
 This research finds that from 2005 to 2024, teams that shot more threes won more games. Taking one more of every 100 shots from three was associated with 0.8 more wins in an 82-game season. The return was largest in the mid-2000s and seems to have eroded as the rest of the league caught up, but that decline is not statistically significant.
 
 <p align="center">
-  <img src="figures/intro_three_point_share.png" alt="Each team's three-point share of field-goal attempts in 2005 and 2024" width="750">
+  <img src="figures/figure1_intro.png" alt="Each team's three-point share of field-goal attempts in 2005 and 2024" width="750">
 </p>
 
 I use a balanced panel of all 30 NBA franchises over 20 regular seasons (2005–2024, 600 team-seasons) from Basketball-Reference, and regress win rate on three-point attempt rate (3PA/FGA) with team and season fixed effects and standard errors clustered by franchise. 
@@ -21,8 +21,9 @@ The project began as a group project for Autumn 2025 ECON 4831: Sports Data Anal
 
 ## What I did
 <p align="center">
-  <img src="figures/what_i_did_comparison.png" alt="Original group paper versus revised version across four stages: data, controls, model, and check. Removing the mediating controls moves the coefficient on three-point attempt rate from -0.061 (not significant) to 0.968 (p < 0.001)." width="900">
+  <img src="figures/figure3_flow_chart.png" alt="Original group paper versus revised version across four stages: data, controls, model, and check. Removing the mediating controls moves the coefficient on three-point attempt rate from -0.061 (not significant) to 0.968 (p < 0.001)." width="900">
 </p>
+
 ### Improved Data Quality
 
 The raw data list 35 team names for 30 franchises, an inconsistency caused by team relocations and renaming. I merged the duplicate identities (SuperSonics/Thunder, New Jersey/Brooklyn Nets, Bobcats/Hornets, Hornets/Pelicans), which yields a balanced panel of 30 franchises × 20 seasons and keeps team fixed effects from splitting one franchise into two.
@@ -44,7 +45,7 @@ The first version of the code used `reghdfe`. I required a second version that u
 ## Findings
 
 <p align="center">
-    <img src="figures/figure1_marginal_effect_stata.png" alt="Marginal effect of three-point attempt rate on win rate" width="700">
+    <img src="figures/figure2_marginal_effect_stata.png" alt="Marginal effect of three-point attempt rate on win rate" width="650">
 </p>
 
 - **Three-point shooting is associated with winning.** A one-percentage-point increase in three-point share (3PA/FGA) is associated with a 0.97 percentage point higher win rate, about 0.8 wins over an 82-game season (p < 0.001). The typical deviation the model uses, 3.8 percentage points from a team’s own norm and its season’s average, is worth about 3 wins. The estimate holds without the pandemic seasons (0.99), for 2005–2019 alone (1.02), and with unmerged team names (0.98); it weakens only for 2015–2024 (0.69, p = 0.10).
